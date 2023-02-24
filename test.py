@@ -24,12 +24,31 @@
 #     else:
 #         print(H-1, M+15)
 
-H, M = map(int, input().split())
-N = int(input())
+# H, M = map(int, input().split())
+# N = int(input())
 
-if M + N <= 60:
-    print(H+1, M+N)
-elif M + N > 60:
-    print(H+(M+N)//60,((M+N)//60)(M+N))
+# if M + N <= 60:
+#     print(H+1, M+N)
+# elif M + N > 60:
+#     print(H+(M+N)//60,((M+N)//60)(M+N))
+
+
+def solution1(cards1, cards2, goal):
+    answer = 'Yes'
+    
+    c1 = 0
+    c2 = 0
+    
+    for i in range(len(goal)):
+        if len(cards1) > c1 and cards1[c1] == goal[i]:
+            c1 += 1
+        elif len(cards2) > c2 and cards2[c2] == goal[i]:
+            c2 += 1
+        else:
+            answer = 'No'
+            break
+            
+        
+    return answer
 
    
